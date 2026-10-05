@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for tukda ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="music" src="music.mp3" loop preload="auto"></audio>
+  <div class="grain"></div>
+  <div class="petals" aria-hidden="true"></div>
+
+  <main>
+    <section id="opening" class="screen active">
+      <div class="eyebrow">a little something from musie</div>
+      <h1>for my <em>tukda</em></h1>
+      <p class="sub">i made this just for you.<br>take your time, okay?</p>
+      <button id="openBtn" class="heart-btn">open <span>♡</span></button>
+      <div class="date">08 · 10 · 2026</div>
+    </section>
+
+    <section id="letter" class="screen hidden">
+      <div class="letter-wrap">
+        <div class="small-title">to my tukda</div>
+        <div class="letter">
+          <p>happy birthday to the person who somehow became such a huge part of my little world.</p>
+          <p>since the 11th of march, everything has felt a little more special. even the most ordinary days have this tiny bit of magic in them just because i get to share them with you.</p>
+          <p>i don't think i can properly explain how much you mean to me. you're my comfort, my favourite person to bother, my favourite person to miss, and honestly one of the best things that has happened to me.</p>
+          <p>i hope you know that i'll always be rooting for you, listening to you, annoying you, and loving you in all the tiny ways i can.</p>
+          <p>and yes, you're stuck with your musie now. no returns, no exchanges.</p>
+        </div>
+        <button id="nextBtn" class="continue">there's more <span>↓</span></button>
+      </div>
+    </section>
+
+    <section id="messages" class="screen hidden">
+      <div class="message-stage">
+        <div class="small-title">one more thing...</div>
+        <div id="message" class="big-message"></div>
+        <button id="messageBtn" class="continue">next <span>♡</span></button>
+      </div>
+    </section>
+
+    <section id="final" class="screen hidden">
+      <div class="final-stage">
+        <div class="sparkle">✦</div>
+        <div class="eyebrow">from your musie</div>
+        <h2>happy birthday,<br><em>tukda.</em></h2>
+        <p>i hope this year is as lovely as you are.<br>and i hope i get to be there for all of it.</p>
+        <div class="final-heart">♡</div>
+      </div>
+    </section>
+  </main>
+
+  <div class="music-pill" id="musicPill" aria-hidden="true">
+    <span class="bars"><i></i><i></i><i></i></span>
+    <span>playing your song</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

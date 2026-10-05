@@ -1,0 +1,57 @@
+:root {
+  --bg: #f7f1eb;
+  --ink: #302824;
+  --muted: #82736a;
+  --rose: #a96f72;
+  --line: rgba(48, 40, 36, .13);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: radial-gradient(circle at 50% 20%, #fffaf6 0, var(--bg) 52%, #eee3da 100%);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+.grain { position: fixed; inset: 0; pointer-events: none; opacity: .055; z-index: 20; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"); }
+.screen { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 32px 22px; text-align: center; opacity: 1; transition: opacity .8s ease, transform .8s ease; }
+.screen.hidden { display: none; }
+.screen.fade-out { opacity: 0; transform: translateY(-12px); }
+.eyebrow, .small-title, .date { text-transform: uppercase; letter-spacing: .2em; font-size: 10px; color: var(--muted); }
+#opening { flex-direction: column; }
+#opening h1 { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: clamp(60px, 13vw, 128px); line-height: .82; margin: 28px 0 24px; letter-spacing: -.045em; }
+em { color: var(--rose); font-style: italic; }
+.sub { font-family: "Cormorant Garamond", serif; font-size: 22px; line-height: 1.4; color: #655950; margin: 0 0 34px; }
+.heart-btn, .continue { border: 1px solid var(--line); background: rgba(255,255,255,.3); color: var(--ink); cursor: pointer; transition: .3s ease; }
+.heart-btn { padding: 15px 25px; border-radius: 999px; font: 500 12px "DM Sans", sans-serif; letter-spacing: .08em; }
+.heart-btn span { font-size: 19px; margin-left: 6px; vertical-align: -2px; }
+.heart-btn:hover, .continue:hover { background: rgba(255,255,255,.75); transform: translateY(-2px); border-color: rgba(48,40,36,.25); }
+.date { margin-top: 44px; opacity: .65; }
+.letter-wrap { width: min(680px, 100%); }
+.letter { margin: 30px auto 32px; text-align: left; padding: 36px clamp(24px, 6vw, 58px); background: rgba(255,255,255,.46); border: 1px solid rgba(48,40,36,.09); box-shadow: 0 24px 70px rgba(80,55,40,.07); }
+.letter p { font-family: "Cormorant Garamond", serif; font-size: 22px; line-height: 1.52; margin: 0 0 18px; }
+.letter p:last-child { margin-bottom: 0; }
+.continue { border-radius: 999px; padding: 12px 19px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.continue span { margin-left: 7px; }
+.message-stage, .final-stage { width: min(760px, 100%); }
+.big-message { min-height: 270px; display: flex; align-items: center; justify-content: center; font: 500 clamp(30px, 5vw, 54px)/1.12 "Cormorant Garamond", serif; padding: 30px; }
+.big-message.show { animation: rise .8s ease both; }
+.final-stage h2 { font: 500 clamp(58px, 11vw, 110px)/.82 "Cormorant Garamond", serif; letter-spacing: -.04em; margin: 25px 0 30px; }
+.final-stage p { font: 22px/1.5 "Cormorant Garamond", serif; color: #655950; }
+.final-heart { color: var(--rose); font-size: 48px; margin-top: 35px; animation: beat 1.6s ease-in-out infinite; }
+.sparkle { color: var(--rose); font-size: 24px; animation: float 3s ease-in-out infinite; }
+.music-pill { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); display: none; align-items: center; gap: 9px; padding: 8px 13px; border-radius: 999px; background: rgba(255,255,255,.65); border: 1px solid rgba(48,40,36,.1); backdrop-filter: blur(10px); color: var(--muted); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; z-index: 10; }
+.music-pill.visible { display: flex; }
+.bars { display: flex; gap: 2px; align-items: center; height: 12px; }
+.bars i { display: block; width: 2px; height: 6px; background: var(--rose); animation: bars .8s ease-in-out infinite; }
+.bars i:nth-child(2) { animation-delay: .15s; height: 10px; }
+.bars i:nth-child(3) { animation-delay: .3s; height: 7px; }
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes beat { 50% { transform: scale(1.12); } }
+@keyframes float { 50% { transform: translateY(-7px) rotate(5deg); } }
+@keyframes bars { 50% { transform: scaleY(.45); } }
+@media (max-width: 600px) {
+  .letter { padding: 28px 22px; }
+  .letter p { font-size: 20px; }
+  .sub { font-size: 20px; }
+}
